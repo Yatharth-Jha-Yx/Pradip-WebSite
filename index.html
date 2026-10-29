@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Pradip Jha — Art Director &amp; Printmaker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&amp;family=Spectral:ital,wght@0,400;0,500;1,400;1,500&amp;display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #191410; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+  a:hover { color: #BF3B1B; }
+  ::selection { background: #BF3B1B; color: #F1EBDD; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+  body.rv-ready [data-reveal] { opacity: 0; transform: translateY(30px); transition: opacity .9s cubic-bezier(.2,.7,.3,1), transform .9s cubic-bezier(.2,.7,.3,1); }
+  body.rv-ready [data-reveal].rv-on { opacity: 1; transform: translateY(0); }
+</style>
+</helmet>
+<div style="font-family:'Spectral',Georgia,serif;color:#191410;font-size:17px;line-height:1.6">
+
+  <!-- ============ WORLD: THE PRESS (printmaker) ============ -->
+  <sc-if value="{{ isPress }}" hint-placeholder-val="{{ true }}">
+    <div data-screen-label="World: The Press" style="background:#F1EBDD;min-height:100vh">
+
+      <header style="position:fixed;top:0;left:0;right:0;z-index:60;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 14px;padding:10px 3vw;background:rgba(241,235,221,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(25,20,16,.14)">
+        <div style="display:flex;align-items:baseline;gap:10px">
+          <span style="font-family:'Rozha One',serif;font-size:19px;letter-spacing:.02em">PRADIP JHA</span>
+          <span style="font-family:'Rozha One',serif;font-size:13px;color:#BF3B1B">प्रदीप झा</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:2px;border:1px solid rgba(25,20,16,.35);border-radius:99px;padding:3px;background:#EAE1CC">
+          <button onClick="{{ toPress }}" style="border:none;cursor:pointer;font-family:'Spectral',serif;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border-radius:99px;white-space:nowrap;background:#191410;color:#F1EBDD">छाप · Prints</button>
+          <button onClick="{{ toSet }}" style="border:none;cursor:pointer;font-family:'Spectral',serif;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border-radius:99px;white-space:nowrap;background:transparent;color:#191410" style-hover="background:rgba(25,20,16,.1)">मंच · Sets</button>
+        </div>
+        <a href="mailto:prakavyath@gmail.com" style="font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(25,20,16,.4)">Contact</a>
+      </header>
+
+      <!-- HERO -->
+      <section data-screen-label="Press hero" style="position:relative;overflow:hidden;min-height:100vh;display:grid;align-content:center;padding:130px 5vw 70px;box-sizing:border-box">
+        <x-import component-from-global-scope="art-bg" from="./art-bg.js" ink="#191410" accent="#BF3B1B" opacity="0.16" style="position:absolute;top:0;left:0;right:0;bottom:0" hint-size="100%,100%"></x-import>
+        <div data-parallax="-0.08" style="position:absolute;top:6vh;right:-4vw;font-family:'Rozha One',serif;font-size:34vw;line-height:1;color:rgba(191,59,27,.07);pointer-events:none;user-select:none">छाप</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:center;position:relative">
+          <div style="animation:fadeUp .9s cubic-bezier(.2,.7,.3,1) both">
+            <div data-reveal style="font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:#8A4A12;margin-bottom:26px">Printmaker · छापाकार &nbsp;—&nbsp; Sanhouli, Bihar → Mumbai</div>
+            <h1 style="margin:0;font-family:'Rozha One',serif;font-weight:400;font-size:clamp(46px,7.2vw,108px);line-height:.98;letter-spacing:-.01em">Carved in wood,<br>pressed into<br><span style="color:#BF3B1B">memory.</span></h1>
+            <p data-reveal style="max-width:520px;font-size:20px;font-style:italic;color:rgba(25,20,16,.75);margin:30px 0 38px">Woodcuts &amp; emboss prints by Pradip Kumar Jha — a student of Shyam Sharma, keeper of the rhythms of village life.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+              <a data-magnet href="#prints" style="text-decoration:none;background:#191410;color:#F1EBDD;padding:14px 26px;font-size:13px;letter-spacing:.2em;text-transform:uppercase" style-hover="background:#BF3B1B;color:#F1EBDD">View the impressions ↓</a>
+              <button data-magnet onClick="{{ toSet }}" style="cursor:pointer;background:none;border:none;border-bottom:1px solid rgba(25,20,16,.5);font-family:'Spectral',serif;font-size:13px;letter-spacing:.2em;text-transform:uppercase;padding:6px 2px;color:#191410" style-hover="color:#BF3B1B;border-bottom:1px solid #BF3B1B">His other life: the sets →</button>
+            </div>
+          </div>
+          <div style="position:relative;min-height:480px;animation:fadeUp 1.1s .15s cubic-bezier(.2,.7,.3,1) both">
+            <img src="assets/exhibition/ex-27.jpg" alt="Woodcut print" loading="lazy" data-depth="16" data-rot="-2.5" style="position:absolute;left:2%;top:4%;width:56%;transform:rotate(-2.5deg);border:10px solid #FBF8F1;box-shadow:0 22px 50px rgba(25,20,16,.28)">
+            <img src="assets/exhibition/ex-29.jpg" alt="Woodcut print" loading="lazy" data-depth="26" data-rot="2" style="position:absolute;right:0;top:22%;width:48%;transform:rotate(2deg);border:10px solid #FBF8F1;box-shadow:0 22px 50px rgba(25,20,16,.28)">
+            <img src="assets/exhibition/ex-55.jpg" alt="Woodcut print" loading="lazy" data-depth="10" data-rot="-1" style="position:absolute;left:18%;bottom:0;width:44%;transform:rotate(-1deg);border:10px solid #FBF8F1;box-shadow:0 22px 50px rgba(25,20,16,.28)">
+          </div>
+        </div>
+      </section>
+
+      <div style="height:12px;background:conic-gradient(from 135deg at 50% 100%, #BF3B1B 90deg, rgba(0,0,0,0) 0) 0 0 / 22px 12px repeat-x"></div>
+
+      <!-- STATEMENT -->
+      <section data-screen-label="Artist statement" style="background:#E9E0CC;padding:clamp(64px,9vw,120px) 5vw">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:56px;align-items:center;max-width:1300px;margin:0 auto">
+          <div>
+            <img src="assets/exhibition/ex-22.jpg" alt="Pradip Jha lecturing, his print behind him" loading="lazy" style="width:100%;max-width:460px;display:block;border:10px solid #FBF8F1;box-shadow:0 20px 44px rgba(25,20,16,.22);transform:rotate(-1.2deg)">
+            <div style="font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(25,20,16,.55);margin-top:18px">The artist, with a print at his back.</div>
+          </div>
+          <div>
+            <div data-reveal style="font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:#8A4A12;margin-bottom:20px">अध्याय १ — The Artist</div>
+            <p data-reveal style="font-family:'Rozha One',serif;font-size:clamp(26px,3vw,40px);line-height:1.25;margin:0 0 26px">“Folklore, rituals and the rhythms of nature — a world shaped by collective memory.”</p>
+            <p data-reveal style="max-width:560px;color:rgba(25,20,16,.8);margin:0 0 16px">Pradip Kumar Jha's woodcuts and emboss prints are rooted in the tribal culture and traditions of his childhood in Sanhouli village, Bihar. The tactile quality of his prints — carved into wood, inked, and pressed by hand — gives them a powerful material presence.</p>
+            <p data-reveal style="max-width:560px;color:rgba(25,20,16,.8);margin:0">A student of the renowned printmaker Shyam Sharma, he acknowledges his mentor's influence, yet his work stays firmly grounded in his own lived experience — simplified forms, rhythmic patterns, and symbols that remember.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRINTS -->
+      <section id="prints" data-screen-label="Prints gallery" style="background:#F1EBDD;padding:clamp(64px,9vw,120px) 5vw">
+        <div style="max-width:1500px;margin:0 auto">
+          <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:44px">
+            <div>
+              <div data-reveal style="font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:#8A4A12;margin-bottom:14px">अध्याय २ — छाप</div>
+              <h2 data-reveal style="margin:0;font-family:'Rozha One',serif;font-weight:400;font-size:clamp(40px,6vw,88px);line-height:1">The Impressions</h2>
+            </div>
+            <div style="font-size:14px;font-style:italic;color:rgba(25,20,16,.6)">Woodcut &amp; emboss prints — click any work to look closer.</div>
+          </div>
+          <div onClick="{{ galleryClick }}" style="columns:330px;column-gap:18px">
+            <sc-for list="{{ prints }}" as="p" hint-placeholder-count="8">
+              <img src="{{ p }}" alt="Woodcut print by Pradip Jha" loading="lazy" data-zoom="1" data-reveal data-tilt style="width:100%;display:block;box-sizing:border-box;margin:0 0 18px;border:8px solid #FBF8F1;box-shadow:0 6px 18px rgba(25,20,16,.14);cursor:zoom-in;break-inside:avoid" style-hover="box-shadow:0 12px 30px rgba(25,20,16,.3)">
+            </sc-for>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS INTERLUDE -->
+      <section data-screen-label="Process" style="background:#191410;color:#F1EBDD;padding:clamp(72px,10vw,140px) 5vw">
+        <div style="max-width:1200px;margin:0 auto">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px">
+            <div>
+              <div style="font-family:'Rozha One',serif;font-size:clamp(44px,5vw,72px);color:#BF3B1B;line-height:1">काटना</div>
+              <div style="font-size:13px;letter-spacing:.26em;text-transform:uppercase;margin:12px 0 10px;color:rgba(241,235,221,.6)">Carve</div>
+              <p style="margin:0;color:rgba(241,235,221,.75);max-width:300px">The block is cut against the grain of forgetting.</p>
+            </div>
+            <div>
+              <div style="font-family:'Rozha One',serif;font-size:clamp(44px,5vw,72px);color:#D9A521;line-height:1">रंगना</div>
+              <div style="font-size:13px;letter-spacing:.26em;text-transform:uppercase;margin:12px 0 10px;color:rgba(241,235,221,.6)">Ink</div>
+              <p style="margin:0;color:rgba(241,235,221,.75);max-width:300px">Colour is rolled over the wound in the wood.</p>
+            </div>
+            <div>
+              <div style="font-family:'Rozha One',serif;font-size:clamp(44px,5vw,72px);color:#F1EBDD;line-height:1">छापना</div>
+              <div style="font-size:13px;letter-spacing:.26em;text-transform:uppercase;margin:12px 0 10px;color:rgba(241,235,221,.6)">Press</div>
+              <p style="margin:0;color:rgba(241,235,221,.75);max-width:300px">The paper leans in — and remembers.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="max-width:1200px;margin:clamp(56px,8vw,96px) auto 0;border-top:1px solid rgba(241,235,221,.16);padding-top:52px">
+          <div data-reveal style="font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:#D9A521;margin-bottom:14px">खेल — Try the press yourself</div>
+          <h3 data-reveal style="margin:0 0 14px;font-family:'Rozha One',serif;font-weight:400;font-size:clamp(28px,3.8vw,54px);line-height:1.05">Carve a block. Pull a print.</h3>
+          <p data-reveal style="max-width:640px;color:rgba(241,235,221,.72);margin:0 0 30px">Draw your carving into the wood, choose an ink, and press — the paper takes a mirrored छाप, layer over layer, like a real edition. Slight misregistration included, free of charge.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:26px;align-items:start">
+            <div>
+              <div style="font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:rgba(241,235,221,.55);margin-bottom:10px">काठ · The Block — draw here</div>
+              <canvas data-carve-block width="640" height="780" style="width:100%;display:block;background:#5C3E24;border:1px solid rgba(241,235,221,.22);cursor:crosshair;touch-action:none"></canvas>
+            </div>
+            <div>
+              <div style="font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:rgba(241,235,221,.55);margin-bottom:10px">कागज़ · The Paper</div>
+              <canvas data-carve-paper width="640" height="780" style="width:100%;display:block;background:#FBF8F1;border:1px solid rgba(241,235,221,.22)"></canvas>
+            </div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:20px">
+            <button data-magnet onClick="{{ pressPrint }}" style="cursor:pointer;background:#BF3B1B;border:none;color:#F1EBDD;font-family:'Spectral',serif;font-size:13px;letter-spacing:.22em;text-transform:uppercase;padding:13px 26px" style-hover="background:#D8451F">छापो · Press</button>
+            <button onClick="{{ clearBlock }}" style="cursor:pointer;background:none;border:1px solid rgba(241,235,221,.35);color:#F1EBDD;font-family:'Spectral',serif;font-size:13px;letter-spacing:.22em;text-transform:uppercase;padding:12px 22px" style-hover="border:1px solid #F1EBDD">Carve anew</button>
+            <button onClick="{{ newSheet }}" style="cursor:pointer;background:none;border:1px solid rgba(241,235,221,.35);color:#F1EBDD;font-family:'Spectral',serif;font-size:13px;letter-spacing:.22em;text-transform:uppercase;padding:12px 22px" style-hover="border:1px solid #F1EBDD">Fresh sheet</button>
+            <div style="display:flex;gap:10px;align-items:center;margin-left:8px">
+              <button onClick="{{ inkRed }}" aria-label="Vermillion ink" style="width:28px;height:28px;border-radius:50%;background:#BF3B1B;cursor:pointer;padding:0;border:2px solid {{ inkRedRing }}"></button>
+              <button onClick="{{ inkGold }}" aria-label="Ochre ink" style="width:28px;height:28px;border-radius:50%;background:#D9A521;cursor:pointer;padding:0;border:2px solid {{ inkGoldRing }}"></button>
+              <button onClick="{{ inkBlue }}" aria-label="Indigo ink" style="width:28px;height:28px;border-radius:50%;background:#33506B;cursor:pointer;padding:0;border:2px solid {{ inkBlueRing }}"></button>
+            </div>
+            <span style="font-size:13.5px;color:rgba(241,235,221,.55);font-style:italic">{{ editionLabel }}</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXHIBITIONS -->
+      <section data-screen-label="Exhibitions" style="background:#E9E0CC;padding:clamp(64px,9vw,120px) 5vw">
+        <div style="max-width:1500px;margin:0 auto">
+          <div data-reveal style="font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:#8A4A12;margin-bottom:14px">अध्याय ३ — प्रदर्शनी</div>
+          <h2 data-reveal style="margin:0 0 10px;font-family:'Rozha One',serif;font-weight:400;font-size:clamp(40px,6vw,88px);line-height:1">Exhibitions</h2>
+          <div style="display:flex;flex-wrap:wrap;gap:8px 26px;align-items:baseline;margin:26px 0 48px;font-family:'Rozha One',serif;font-size:clamp(20px,2.6vw,32px);color:rgba(25,20,16,.85)">
+            <span>Delhi</span><span style="color:#BF3B1B">·</span>
+            <span>Bengaluru</span><span style="color:#BF3B1B">·</span>
+            <span>Kolkata</span><span style="color:#BF3B1B">·</span>
+            <span>Patna</span>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center;margin-bottom:56px">
+            <div>
+              <img src="assets/exhibition/ex-21.jpg" alt="Panchadhara exhibition poster" loading="lazy" style="width:100%;max-width:440px;display:block;border:8px solid #FBF8F1;box-shadow:0 18px 40px rgba(25,20,16,.22)">
+            </div>
+            <div>
+              <div style="font-family:'Rozha One',serif;font-size:clamp(28px,3.4vw,46px);line-height:1.15;margin-bottom:16px">Panchadhara<span style="color:#BF3B1B">.</span></div>
+              <p data-reveal style="max-width:520px;color:rgba(25,20,16,.8);margin:0 0 14px">A five-stream exhibition of paintings and prints — one of the shows that has carried his impressions from Bihar's presses into galleries across India.</p>
+              <p data-reveal style="max-width:520px;font-style:italic;color:rgba(25,20,16,.55);margin:0">Exhibition names &amp; dates being gathered — this page will grow as they arrive.</p>
+            </div>
+          </div>
+          <div onClick="{{ galleryClick }}" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px">
+            <sc-for list="{{ exRooms }}" as="p" hint-placeholder-count="8">
+              <img src="{{ p }}" alt="Exhibition view" loading="lazy" data-zoom="1" data-reveal data-tilt style="width:100%;height:220px;object-fit:cover;display:block;cursor:zoom-in;filter:saturate(.96)" style-hover="filter:saturate(1.1)">
+            </sc-for>
+          </div>
+        </div>
+      </section>
+
+      <!-- LECTURES -->
+      <section data-screen-label="Lectures" style="background:#F1EBDD;padding:clamp(64px,9vw,120px) 5vw">
+        <div style="max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:52px;align-items:center">
+          <div>
+            <div data-reveal style="font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:#8A4A12;margin-bottom:14px">अध्याय ४ — व्याख्यान</div>
+            <h2 data-reveal style="margin:0 0 22px;font-family:'Rozha One',serif;font-weight:400;font-size:clamp(36px,5vw,72px);line-height:1.02">The lectern is<br>also a studio.</h2>
+            <p data-reveal style="max-width:520px;color:rgba(25,20,16,.8);margin:0 0 14px">As a guest lecturer, Pradip Jha has carried the printmaker's discipline into colleges across Bihar — teaching students that a carved line, like a well-built set, must hold a story.</p>
+            <p data-reveal style="max-width:520px;font-style:italic;color:rgba(25,20,16,.55);margin:0">College names &amp; sessions to be listed here.</p>
+          </div>
+          <div onClick="{{ galleryClick }}" style="display:grid;gap:14px">
+            <img src="assets/exhibition/ex-24.jpg" alt="Guest lecture" loading="lazy" data-zoom="1" data-reveal style="width:100%;display:block;cursor:zoom-in;border:8px solid #FBF8F1;box-shadow:0 14px 34px rgba(25,20,16,.18)">
+            <img src="assets/exhibition/ex-23.jpg" alt="Felicitation at a lecture" loading="lazy" data-zoom="1" data-reveal style="width:100%;display:block;cursor:zoom-in;border:8px solid #FBF8F1;box-shadow:0 14px 34px rgba(25,20,16,.18)">
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer data-screen-label="Press footer" style="position:relative;overflow:hidden;background:#191410;color:#F1EBDD;padding:clamp(72px,10vw,130px) 5vw 46px">
+        <x-import component-from-global-scope="art-bg" from="./art-bg.js" ink="#F1EBDD" accent="#D9A521" opacity="0.10" style="position:absolute;top:0;left:0;right:0;bottom:0" hint-size="100%,100%"></x-import>
+        <div style="max-width:1300px;margin:0 auto;position:relative">
+          <div data-reveal style="font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:#D9A521;margin-bottom:22px">For commissions, exhibitions &amp; lectures</div>
+          <a data-reveal href="mailto:prakavyath@gmail.com" style="text-decoration:none;font-family:'Rozha One',serif;font-size:clamp(26px,4.6vw,64px);line-height:1.1;word-break:break-all" style-hover="color:#BF3B1B">prakavyath@gmail.com</a>
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;margin-top:56px;padding-top:22px;border-top:1px solid rgba(241,235,221,.18);font-size:13.5px;color:rgba(241,235,221,.6)">
+            <span>Pradip Kumar Jha — Printmaker · Art Director · Guest Lecturer</span>
+            <button data-magnet onClick="{{ toSet }}" style="cursor:pointer;background:none;border:none;color:#F1EBDD;font-family:'Spectral',serif;font-size:13.5px;border-bottom:1px solid rgba(241,235,221,.4);padding:0 0 2px" style-hover="color:#BF3B1B">Cross over to the sets →</button>
+            <span>Sanhouli, Bihar → Mumbai, India</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </sc-if>
+
+  <!-- ============ WORLD: THE SET (art director) ============ -->
+  <sc-if value="{{ isSet }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="World: The Set" style="background:#121009;color:#EFE7D4;min-height:100vh">
+
+      <header style="position:fixed;top:0;left:0;right:0;z-index:60;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 14px;padding:10px 3vw;background:rgba(18,16,9,.82);backdrop-filter:blur(10px);border-bottom:1px solid rgba(239,231,212,.14)">
+        <div style="display:flex;align-items:baseline;gap:10px">
+          <span style="font-family:'Rozha One',serif;font-size:19px;letter-spacing:.02em;color:#EFE7D4">PRADIP JHA</span>
+          <span style="font-family:'Rozha One',serif;font-size:13px;color:#D9A521">प्रदीप झा</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:2px;border:1px solid rgba(239,231,212,.3);border-radius:99px;padding:3px;background:rgba(239,231,212,.06)">
+          <button onClick="{{ toPress }}" style="border:none;cursor:pointer;font-family:'Spectral',serif;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border-radius:99px;white-space:nowrap;background:transparent;color:#EFE7D4" style-hover="background:rgba(239,231,212,.12)">छाप · Prints</button>
+          <button onClick="{{ toSet }}" style="border:none;cursor:pointer;font-family:'Spectral',serif;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border-radius:99px;white-space:nowrap;background:#EFE7D4;color:#121009">मंच · Sets</button>
+        </div>
+        <a href="mailto:prakavyath@gmail.com" style="font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:#EFE7D4;border-bottom:1px solid rgba(239,231,212,.4)">Contact</a>
+      </header>
+
+      <!-- HERO -->
+      <section data-screen-label="Set hero" style="position:relative;min-height:100vh;display:grid;align-content:end;overflow:hidden">
+        <img src="assets/bigboss/bb-01.jpg" alt="Bigg Boss house set" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,16,9,.55) 0%,rgba(18,16,9,.15) 45%,rgba(18,16,9,.92) 100%)"></div>
+        <x-import component-from-global-scope="art-bg" from="./art-bg.js" mode="stage" ink="#EFE7D4" accent="#D9A521" opacity="0.22" style="position:absolute;top:0;left:0;right:0;bottom:0" hint-size="100%,100%"></x-import>
+        <div data-parallax="0.06" style="position:absolute;top:4vh;right:-3vw;font-family:'Rozha One',serif;font-size:32vw;line-height:1;color:rgba(217,165,33,.08);pointer-events:none;user-select:none">मंच</div>
+        <div style="position:relative;padding:0 5vw 9vh;animation:fadeUp .9s cubic-bezier(.2,.7,.3,1) both">
+          <div data-reveal style="font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:#D9A521;margin-bottom:24px">Art Director · कला निर्देशन — Television &amp; Cinema</div>
+          <h1 style="margin:0;font-family:'Rozha One',serif;font-weight:400;font-size:clamp(46px,7.4vw,112px);line-height:.98">Worlds built<br>to be <span style="color:#E86A33">filmed.</span></h1>
+          <p data-reveal style="max-width:600px;font-size:20px;font-style:italic;color:rgba(239,231,212,.8);margin:28px 0 38px">Sets for Bigg Boss, Kya Aap Paanchvi Pass Se Tez Hain, Raavan, Bose — houses, arenas and villages the whole country walked through on screen.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+            <a data-magnet href="#television" style="text-decoration:none;background:#EFE7D4;color:#121009;padding:14px 26px;font-size:13px;letter-spacing:.2em;text-transform:uppercase" style-hover="background:#E86A33;color:#121009">Enter the sets ↓</a>
+            <button data-magnet onClick="{{ toPress }}" style="cursor:pointer;background:none;border:none;border-bottom:1px solid rgba(239,231,212,.5);font-family:'Spectral',serif;font-size:13px;letter-spacing:.2em;text-transform:uppercase;padding:6px 2px;color:#EFE7D4" style-hover="color:#E86A33;border-bottom:1px solid #E86A33">His other life: the press →</button>
+          </div>
+        </div>
+      </section>
+
+      <div data-marquee style="overflow:hidden;border-top:1px solid rgba(239,231,212,.14);border-bottom:1px solid rgba(239,231,212,.14);padding:16px 0;background:#0D0B06">
+        <div data-marquee-track style="display:inline-flex;white-space:nowrap;will-change:transform">
+          <span style="font-family:'Rozha One',serif;font-size:clamp(20px,2.8vw,38px);line-height:1;color:rgba(239,231,212,.32);flex:none">Bigg Boss&nbsp;&middot;&nbsp;Kya Aap Paanchvi Pass Se Tez Hain&nbsp;&middot;&nbsp;Fame X&nbsp;&middot;&nbsp;Aa Dekhen Zara&nbsp;&middot;&nbsp;The Great Indian Laughter Challenge&nbsp;&middot;&nbsp;Indian Idol&nbsp;&middot;&nbsp;Movers &amp; Shakers&nbsp;&middot;&nbsp;Raavan&nbsp;&middot;&nbsp;Bose&nbsp;&middot;&nbsp;Welcome to Sajjanpur&nbsp;&middot;&nbsp;Chittagong&nbsp;&middot;&nbsp;</span><span aria-hidden="true" style="font-family:'Rozha One',serif;font-size:clamp(20px,2.8vw,38px);line-height:1;color:rgba(239,231,212,.32);flex:none">Bigg Boss&nbsp;&middot;&nbsp;Kya Aap Paanchvi Pass Se Tez Hain&nbsp;&middot;&nbsp;Fame X&nbsp;&middot;&nbsp;Aa Dekhen Zara&nbsp;&middot;&nbsp;The Great Indian Laughter Challenge&nbsp;&middot;&nbsp;Indian Idol&nbsp;&middot;&nbsp;Movers &amp; Shakers&nbsp;&middot;&nbsp;Raavan&nbsp;&middot;&nbsp;Bose&nbsp;&middot;&nbsp;Welcome to Sajjanpur&nbsp;&middot;&nbsp;Chittagong&nbsp;&middot;&nbsp;</span><span aria-hidden="true" style="font-family:'Rozha One',serif;font-size:clamp(20px,2.8vw,38px);line-height:1;color:rgba(239,231,212,.32);flex:none">Bigg Boss&nbsp;&middot;&nbsp;Kya Aap Paanchvi Pass Se Tez Hain&nbsp;&middot;&nbsp;Fame X&nbsp;&middot;&nbsp;Aa Dekhen Zara&nbsp;&middot;&nbsp;The Great Indian Laughter Challenge&nbsp;&middot;&nbsp;Indian Idol&nbsp;&middot;&nbsp;Movers &amp; Shakers&nbsp;&middot;&nbsp;Raavan&nbsp;&middot;&nbsp;Bose&nbsp;&middot;&nbsp;Welcome to Sajjanpur&nbsp;&middot;&nbsp;Chittagong&nbsp;&middot;&nbsp;</span>
+        </div>
+      </div>
+
+      <!-- TELEVISION -->
+      <section id="television" data-screen-label="Television" style="padding:clamp(64px,9vw,120px) 5vw 40px">
+        <div style="max-width:1500px;margin:0 auto">
+          <div data-reveal style="font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:#D9A521;margin-bottom:14px">अध्याय १ — दूरदर्शन</div>
+          <h2 data-reveal style="margin:0;font-family:'Rozha One',serif;font-weight:400;font-size:clamp(40px,6vw,88px);line-height:1">Television</h2>
+          <div onClick="{{ galleryClick }}">
+            <sc-for list="{{ tvShows }}" as="s" hint-placeholder-count="3">
+              <div data-reveal style="border-top:1px solid rgba(239,231,212,.14);margin-top:64px;padding-top:56px">
+                <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 20px">
+                  <span style="font-family:'Rozha One',serif;font-size:22px;color:#D9A521">{{ s.num }}</span>
+                  <h3 style="margin:0;font-family:'Rozha One',serif;font-weight:400;font-size:clamp(30px,4.4vw,60px);line-height:1.05">{{ s.title }}</h3>
+                  <span style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:rgba(239,231,212,.6)">{{ s.meta }}</span>
+                </div>
+                <p data-reveal style="max-width:640px;color:rgba(239,231,212,.75);margin:18px 0 30px">{{ s.blurb }}</p>
+                <sc-if value="{{ s.lead }}" hint-placeholder-val="{{ true }}">
+                  <img src="{{ s.lead }}" alt="{{ s.title }} set" loading="lazy" data-zoom="1" style="width:100%;max-height:68vh;object-fit:cover;display:block;cursor:zoom-in;border:1px solid rgba(239,231,212,.14)">
+                  <div style="display:flex;gap:10px;overflow-x:auto;padding:12px 0 6px">
+                    <sc-for list="{{ s.rest }}" as="p" hint-placeholder-count="4">
+                      <img src="{{ p }}" alt="{{ s.title }} set detail" loading="lazy" data-zoom="1" style="height:160px;flex:none;display:block;cursor:zoom-in;border:1px solid rgba(239,231,212,.12);opacity:.92" style-hover="opacity:1">
+                    </sc-for>
+                  </div>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+
+      <!-- CINEMA -->
+      <section data-screen-label="Cinema" style="background:#1A1309;padding:clamp(64px,9vw,120px) 5vw 40px;margin-top:64px">
+        <div style="max-width:1500px;margin:0 auto">
+          <div data-reveal style="font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:#D9A521;margin-bottom:14px">अध्याय २ — सिनेमा</div>
+          <h2 data-reveal style="margin:0;font-family:'Rozha One',serif;font-weight:400;font-size:clamp(40px,6vw,88px);line-height:1">Cinema</h2>
+          <div onClick="{{ galleryClick }}">
+            <sc-for list="{{ films }}" as="s" hint-placeholder-count="3">
+              <div data-reveal style="border-top:1px solid rgba(239,231,212,.14);margin-top:64px;padding-top:56px">
+                <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 20px">
+                  <span style="font-family:'Rozha One',serif;font-size:22px;color:#D9A521">{{ s.num }}</span>
+                  <h3 style="margin:0;font-family:'Rozha One',serif;font-weight:400;font-size:clamp(30px,4.4vw,60px);line-height:1.05">{{ s.title }}</h3>
+                  <span style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:rgba(239,231,212,.6)">{{ s.meta }}</span>
+                </div>
+                <p data-reveal style="max-width:640px;color:rgba(239,231,212,.75);margin:18px 0 30px">{{ s.blurb }}</p>
+                <sc-if value="{{ s.lead }}" hint-placeholder-val="{{ true }}">
+                  <img src="{{ s.lead }}" alt="{{ s.title }} set" loading="lazy" data-zoom="1" style="width:100%;max-height:68vh;object-fit:cover;display:block;cursor:zoom-in;border:1px solid rgba(239,231,212,.14)">
+                  <div style="display:flex;gap:10px;overflow-x:auto;padding:12px 0 6px">
+                    <sc-for list="{{ s.rest }}" as="p" hint-placeholder-count="4">
+                      <img src="{{ p }}" alt="{{ s.title }} set detail" loading="lazy" data-zoom="1" style="height:160px;flex:none;display:block;cursor:zoom-in;border:1px solid rgba(239,231,212,.12);opacity:.92" style-hover="opacity:1">
+                    </sc-for>
+                  </div>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+
+      <!-- TIMELINE -->
+      <section data-screen-label="Timeline" style="position:relative;overflow:hidden;padding:clamp(64px,9vw,120px) 5vw;margin-top:24px">
+        <x-import component-from-global-scope="art-bg" from="./art-bg.js" mode="stage" ink="#EFE7D4" accent="#D9A521" opacity="0.09" style="position:absolute;top:0;left:0;right:0;bottom:0" hint-size="100%,100%"></x-import>
+        <div style="max-width:1100px;margin:0 auto;position:relative">
+          <div data-reveal style="font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:#D9A521;margin-bottom:14px">अध्याय ३ — समयरेखा</div>
+          <h2 data-reveal style="margin:0 0 44px;font-family:'Rozha One',serif;font-weight:400;font-size:clamp(40px,6vw,88px);line-height:1">The Years</h2>
+          <div style="display:grid;gap:0">
+            <sc-for list="{{ timeline }}" as="t" hint-placeholder-count="6">
+              <div data-reveal style="display:flex;gap:26px;align-items:baseline;padding:16px 0;border-top:1px solid rgba(239,231,212,.12)">
+                <span style="font-family:'Rozha One',serif;font-size:clamp(20px,2.4vw,30px);color:#E86A33;min-width:96px">{{ t.y }}</span>
+                <span style="color:rgba(239,231,212,.85);font-size:clamp(16px,1.6vw,19px)">{{ t.what }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <p style="font-style:italic;color:rgba(239,231,212,.5);margin:26px 0 0;font-size:14.5px">Exact dates for early career &amp; exhibitions are being gathered — the line will sharpen.</p>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer data-screen-label="Set footer" style="position:relative;overflow:hidden;background:#0D0B06;color:#EFE7D4;padding:clamp(72px,10vw,130px) 5vw 46px">
+        <x-import component-from-global-scope="art-bg" from="./art-bg.js" mode="stage" ink="#EFE7D4" accent="#E86A33" opacity="0.16" style="position:absolute;top:0;left:0;right:0;bottom:0" hint-size="100%,100%"></x-import>
+        <div style="max-width:1300px;margin:0 auto;position:relative">
+          <div data-reveal style="font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:#D9A521;margin-bottom:22px">For productions, sets &amp; collaborations</div>
+          <a data-reveal href="mailto:prakavyath@gmail.com" style="text-decoration:none;font-family:'Rozha One',serif;font-size:clamp(26px,4.6vw,64px);line-height:1.1;word-break:break-all" style-hover="color:#E86A33">prakavyath@gmail.com</a>
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;margin-top:56px;padding-top:22px;border-top:1px solid rgba(239,231,212,.18);font-size:13.5px;color:rgba(239,231,212,.6)">
+            <span>Pradip Kumar Jha — Art Director · Printmaker · Guest Lecturer</span>
+            <button data-magnet onClick="{{ toPress }}" style="cursor:pointer;background:none;border:none;color:#EFE7D4;font-family:'Spectral',serif;font-size:13.5px;border-bottom:1px solid rgba(239,231,212,.4);padding:0 0 2px" style-hover="color:#E86A33">Cross over to the press →</button>
+            <span>Mumbai, India</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </sc-if>
+
+  <!-- LIGHTBOX -->
+  <sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeLightbox }}" style="position:fixed;inset:0;z-index:90;background:rgba(13,10,6,.94);display:grid;place-items:center;cursor:zoom-out;animation:fadeUp .25s ease both">
+      {{ lightboxImg }}
+      <button onClick="{{ lbPrev }}" aria-label="Previous" style="position:fixed;left:14px;top:50%;margin-top:-26px;background:rgba(241,235,221,.06);border:1px solid rgba(241,235,221,.32);color:#F1EBDD;font-size:26px;line-height:1;padding:12px 17px;cursor:pointer;border-radius:99px;font-family:'Spectral',serif">&lsaquo;</button>
+      <button onClick="{{ lbNext }}" aria-label="Next" style="position:fixed;right:14px;top:50%;margin-top:-26px;background:rgba(241,235,221,.06);border:1px solid rgba(241,235,221,.32);color:#F1EBDD;font-size:26px;line-height:1;padding:12px 17px;cursor:pointer;border-radius:99px;font-family:'Spectral',serif">&rsaquo;</button>
+      <div style="position:fixed;bottom:18px;left:0;right:0;text-align:center;font-family:'Spectral',serif;letter-spacing:.3em;font-size:13px;color:rgba(241,235,221,.7)">{{ lightboxCounter }}</div>
+      <div style="position:fixed;top:18px;right:26px;font-size:15px;letter-spacing:.2em;color:rgba(241,235,221,.8);font-family:'Spectral',serif">CLOSE ✕</div>
+    </div>
+  </sc-if>
+
+  <!-- INK WIPE -->
+  <sc-if value="{{ wipeActive }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:100;background:#191410;display:grid;place-items:center;will-change:transform;transform:{{ wipeX }};transition:{{ wipeT }}">
+      <div style="font-family:'Rozha One',serif;font-size:clamp(90px,20vw,300px);color:#F1EBDD;line-height:1">{{ wipeWord }}</div>
+      <div style="position:absolute;left:0;right:0;bottom:14vh;text-align:center;font-family:'Spectral',serif;font-size:13px;letter-spacing:.34em;text-transform:uppercase;color:rgba(241,235,221,.55)">{{ wipeSub }}</div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;defaultWorld&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;press&quot;, &quot;set&quot;], &quot;default&quot;: &quot;press&quot;, &quot;tsType&quot;: &quot;'press' | 'set'&quot;, &quot;section&quot;: &quot;Behaviour&quot; },
+  &quot;inkWipe&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Behaviour&quot; }
+}">
+class Component extends DCLogic {
+  state = { world: null, wipe: 'idle', wipeWord: '', wipeSub: '', lightbox: null, lbList: [], lbIdx: -1, ink: '#BF3B1B', editions: 0, saved: { press: 0, set: 0 } };
+
+  componentDidMount() {
+    this._key = (e) => {
+      if (e.key === 'Escape') this.setState({ lightbox: null });
+      if (this.state.lightbox) {
+        if (e.key === 'ArrowRight') this.stepLightbox(1);
+        if (e.key === 'ArrowLeft') this.stepLightbox(-1);
+      }
+    };
+    window.addEventListener('keydown', this._key);
+
+    // --- JS fx layer: progress bar, custom cursor, reveals, parallax, marquee ---
+    this._mouse = { x: innerWidth / 2, y: innerHeight / 2, nx: 0, ny: 0 };
+    this._cx = this._mouse.x; this._cy = this._mouse.y; this._cs = 1;
+    this._px = 0; this._py = 0; this._mqx = 0; this._hot = false;
+
+    const bar = document.createElement('div');
+    bar.style.cssText = 'position:fixed;top:0;left:0;height:3px;width:0;background:#BF3B1B;z-index:120;pointer-events:none';
+    document.body.appendChild(bar);
+    this._bar = bar;
+
+    this._fine = window.matchMedia && matchMedia('(pointer:fine)').matches;
+    if (this._fine) {
+      const cur = document.createElement('div');
+      cur.style.cssText = 'position:fixed;left:0;top:0;width:14px;height:14px;border-radius:50%;background:#F1EBDD;mix-blend-mode:difference;z-index:130;pointer-events:none;transform:translate(-100px,-100px)';
+      document.body.appendChild(cur);
+      this._cur = cur;
+    }
+    this._mm = (e) => {
+      this._mouse.x = e.clientX; this._mouse.y = e.clientY;
+      this._mouse.nx = e.clientX / innerWidth * 2 - 1;
+      this._mouse.ny = e.clientY / innerHeight * 2 - 1;
+      const t = e.target;
+      this._hot = !!(t && t.closest && t.closest('a,button,[data-zoom]'));
+      // 3D tilt on gallery images
+      const tl = t && t.closest ? t.closest('[data-tilt]') : null;
+      if (this._tiltEl && this._tiltEl !== tl) {
+        this._tiltEl.style.transform = '';
+        this._tiltEl.style.zIndex = '';
+      }
+      this._tiltEl = tl;
+      if (tl && this._fine) {
+        const r = tl.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        if (!tl._tiltInit) {
+          tl._tiltInit = true;
+          tl.style.transition = 'transform .18s ease-out';
+          tl.style.willChange = 'transform';
+          tl.style.position = 'relative';
+        }
+        tl.style.transform = 'perspective(700px) rotateX(' + (-py * 9).toFixed(2) + 'deg) rotateY(' + (px * 9).toFixed(2) + 'deg) scale(1.03)';
+        tl.style.zIndex = '3';
+      }
+    };
+    window.addEventListener('mousemove', this._mm);
+
+    // chapter HUD chip
+    if (innerWidth > 760) {
+      const chip = document.createElement('div');
+      chip.style.cssText = 'position:fixed;left:16px;bottom:14px;z-index:110;pointer-events:none;background:rgba(25,20,16,.92);color:#F1EBDD;border:1px solid rgba(241,235,221,.25);padding:8px 14px;font-family:Spectral,serif;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;opacity:0;transition:opacity .35s';
+      document.body.appendChild(chip);
+      this._chip = chip;
+    }
+    this._hudMap = {
+      'Press hero': 'छाप · The Press',
+      'Artist statement': 'अध्याय १ · The Artist',
+      'Prints gallery': 'अध्याय २ · The Impressions',
+      'Process': 'काटना · रंगना · छापना',
+      'Exhibitions': 'अध्याय ३ · Exhibitions',
+      'Lectures': 'अध्याय ४ · The Lectern',
+      'Press footer': 'नमस्ते · Contact',
+      'Set hero': 'मंच · The Set',
+      'Television': 'अध्याय १ · Television',
+      'Cinema': 'अध्याय २ · Cinema',
+      'Timeline': 'अध्याय ३ · The Years',
+      'Set footer': 'नमस्ते · Contact'
+    };
+    this._io2 = new IntersectionObserver((ents) => {
+      for (const en of ents) {
+        if (en.isIntersecting && this._chip) {
+          const txt = this._hudMap[en.target.getAttribute('data-screen-label')];
+          if (txt) { this._chip.textContent = txt; this._chip.style.opacity = '1'; }
+        }
+      }
+    }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+
+    this._io = new IntersectionObserver((ents) => {
+      let i = 0;
+      for (const en of ents) {
+        if (en.isIntersecting) {
+          en.target.style.transitionDelay = (i++ % 6) * 70 + 'ms';
+          en.target.classList.add('rv-on');
+          this._io.unobserve(en.target);
+        }
+      }
+    }, { threshold: 0.06, rootMargin: '0px 0px -6% 0px' });
+    document.body.classList.add('rv-ready');
+    this._scan();
+
+    const loop = () => {
+      this._raf = requestAnimationFrame(loop);
+      const sy = window.scrollY;
+      const max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+      this._bar.style.width = (sy / max * 100) + '%';
+      document.querySelectorAll('[data-parallax]').forEach((el) => {
+        el.style.transform = 'translateY(' + (sy * parseFloat(el.dataset.parallax)) + 'px)';
+      });
+      this._px += (this._mouse.nx - this._px) * 0.06;
+      this._py += (this._mouse.ny - this._py) * 0.06;
+      document.querySelectorAll('[data-depth]').forEach((el) => {
+        const d = parseFloat(el.dataset.depth) || 0;
+        const r = parseFloat(el.dataset.rot) || 0;
+        el.style.transform = 'rotate(' + r + 'deg) translate3d(' + (-this._px * d).toFixed(2) + 'px,' + (-this._py * d).toFixed(2) + 'px,0)';
+      });
+      const track = document.querySelector('[data-marquee-track]');
+      if (track && track.firstElementChild) {
+        const w = track.firstElementChild.offsetWidth;
+        if (w > 40) {
+          this._mqx -= 0.8;
+          if (this._mqx <= -w) this._mqx += w;
+          track.style.transform = 'translateX(' + this._mqx.toFixed(2) + 'px)';
+        }
+      }
+      if (this._fine) {
+        document.querySelectorAll('[data-magnet]').forEach((el) => {
+          const r = el.getBoundingClientRect();
+          const dx = this._mouse.x - (r.left + r.width / 2);
+          const dy = this._mouse.y - (r.top + r.height / 2);
+          const dist = Math.hypot(dx, dy);
+          if (dist < 110) {
+            const g = (1 - dist / 110) * 0.35;
+            el.style.transform = 'translate(' + (dx * g).toFixed(1) + 'px,' + (dy * g).toFixed(1) + 'px)';
+            el._mag = true;
+          } else if (el._mag) {
+            el._mag = false;
+            el.style.transform = '';
+          }
+        });
+      }
+      if (this._cur) {
+        this._cx += (this._mouse.x - this._cx) * 0.22;
+        this._cy += (this._mouse.y - this._cy) * 0.22;
+        this._cs += ((this._hot ? 3 : 1) - this._cs) * 0.18;
+        this._cur.style.transform = 'translate(' + (this._cx - 7).toFixed(1) + 'px,' + (this._cy - 7).toFixed(1) + 'px) scale(' + this._cs.toFixed(3) + ')';
+      }
+    };
+    this._raf = requestAnimationFrame(loop);
+  }
+
+  componentDidUpdate() { this._scan(); }
+
+  _scan() {
+    if (!this._io) return;
+    document.querySelectorAll('[data-reveal]').forEach((el) => {
+      if (!el.classList.contains('rv-on') && !el._rvObs) {
+        el._rvObs = true;
+        this._io.observe(el);
+      }
+    });
+    if (this._io2) {
+      document.querySelectorAll('[data-screen-label]').forEach((el) => {
+        const l = el.getAttribute('data-screen-label') || '';
+        if (l.indexOf('World') !== 0 && !el._hudObs) {
+          el._hudObs = true;
+          this._io2.observe(el);
+        }
+      });
+    }
+    this._initStudio();
+  }
+
+  _initStudio() {
+    const block = document.querySelector('[data-carve-block]');
+    const paper = document.querySelector('[data-carve-paper]');
+    if (!block || !paper || block._init) return;
+    block._init = true;
+    const W = block.width, H = block.height;
+    const strokes = document.createElement('canvas');
+    strokes.width = W; strokes.height = H;
+    this._strokes = strokes;
+    this._blockEl = block;
+    this._paperEl = paper;
+    this._repaintBlock();
+    const pctx = paper.getContext('2d');
+    pctx.fillStyle = '#FBF8F1';
+    pctx.fillRect(0, 0, W, H);
+    let last = null;
+    const pos = (e) => {
+      const r = block.getBoundingClientRect();
+      return { x: (e.clientX - r.left) * W / r.width, y: (e.clientY - r.top) * H / r.height };
+    };
+    const draw = (a, b) => {
+      const pairs = [[block.getContext('2d'), '#D8B98C', 13], [strokes.getContext('2d'), '#000', 13]];
+      for (const [ctx, style, w] of pairs) {
+        ctx.strokeStyle = style;
+        ctx.lineWidth = w;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.stroke();
+      }
+    };
+    block.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      block.setPointerCapture(e.pointerId);
+      last = pos(e);
+      draw(last, { x: last.x + 0.1, y: last.y + 0.1 });
+    });
+    block.addEventListener('pointermove', (e) => {
+      if (!last) return;
+      const p = pos(e);
+      draw(last, p);
+      last = p;
+    });
+    const up = () => { last = null; };
+    block.addEventListener('pointerup', up);
+    block.addEventListener('pointercancel', up);
+  }
+
+  _repaintBlock() {
+    const block = this._blockEl;
+    if (!block) return;
+    const ctx = block.getContext('2d');
+    const W = block.width, H = block.height;
+    ctx.fillStyle = '#5C3E24';
+    ctx.fillRect(0, 0, W, H);
+    for (let i = 0; i < 110; i++) {
+      const light = Math.random() < 0.4;
+      ctx.strokeStyle = light ? 'rgba(255,215,160,' + (Math.random() * 0.05) + ')' : 'rgba(0,0,0,' + (Math.random() * 0.09) + ')';
+      ctx.lineWidth = 1 + Math.random() * 2;
+      const x = Math.random() * W;
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.bezierCurveTo(x + 20 - Math.random() * 40, H * 0.33, x + 20 - Math.random() * 40, H * 0.66, x + 10 - Math.random() * 20, H);
+      ctx.stroke();
+    }
+  }
+
+  stepLightbox(dir) {
+    const L = this.state.lbList;
+    if (!L || !L.length) return;
+    const idx = (this.state.lbIdx + dir + L.length) % L.length;
+    this.setState({ lbIdx: idx, lightbox: L[idx] });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this._key);
+    window.removeEventListener('mousemove', this._mm);
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._io) this._io.disconnect();
+    if (this._io2) this._io2.disconnect();
+    if (this._bar) this._bar.remove();
+    if (this._cur) this._cur.remove();
+    if (this._chip) this._chip.remove();
+  }
+
+  world() { return this.state.world ?? (this.props.defaultWorld ?? 'press'); }
+
+  switchWorld(next) {
+    const cur = this.world();
+    if (next === cur || this._busy) return;
+    const saved = { ...this.state.saved, [cur]: window.scrollY };
+    const useWipe = this.props.inkWipe ?? true;
+    if (!useWipe) {
+      this.setState({ world: next, saved });
+      setTimeout(() => this._restoreScroll(saved[next] || 0), 0);
+      return;
+    }
+    this._busy = true;
+    const word = next === 'press' ? 'छाप' : 'मंच';
+    const sub = next === 'press' ? 'The Press — Printmaker' : 'The Set — Art Director';
+    this.setState({ wipe: 'enter', wipeWord: word, wipeSub: sub, saved });
+    requestAnimationFrame(() => requestAnimationFrame(() => this.setState({ wipe: 'cover' })));
+    setTimeout(() => {
+      this.setState({ world: next });
+      this._restoreScroll(this.state.saved[next] || 0);
+      setTimeout(() => this.setState({ wipe: 'exit' }), 80);
+      setTimeout(() => { this.setState({ wipe: 'idle' }); this._busy = false; }, 620);
+    }, 520);
+  }
+
+  _restoreScroll(target) {
+    // Lazy images collapse layout right after a world swap; keep re-applying
+    // the scroll position until the document is tall enough (or ~1.5s passes).
+    const t0 = Date.now();
+    const root = document.documentElement;
+    root.style.scrollBehavior = 'auto';
+    const tick = () => {
+      window.scrollTo({ top: target, behavior: 'instant' });
+      const settled = Math.abs(window.scrollY - target) < 2;
+      if (Date.now() - t0 < 1500 && !settled) {
+        requestAnimationFrame(tick);
+      } else {
+        root.style.scrollBehavior = '';
+      }
+    };
+    tick();
+  }
+
+  renderVals() {
+    const pad = (n) => String(n).padStart(2, '0');
+    const ex = (n) => 'assets/exhibition/ex-' + pad(n) + '.jpg';
+    const seq = (pre, count, start = 1) => Array.from({ length: count }, (_, i) => 'assets/films/' + pre + '-' + (i + start) + '.jpg');
+    const bb = Array.from({ length: 24 }, (_, i) => 'assets/bigboss/bb-' + pad(i + 1) + '.jpg');
+
+    const prints = [17, 18, 19].concat(Array.from({ length: 38 }, (_, i) => i + 25)).map(ex);
+    const exRooms = [4, 5, 6, 7, 8, 20, 9, 10, 11, 12, 13, 14, 15, 16, 63, 64].map(ex);
+
+    const mk = (num, title, meta, blurb, imgs) => ({
+      num, title, meta, blurb,
+      lead: imgs && imgs.length ? imgs[0] : null,
+      rest: imgs && imgs.length > 1 ? imgs.slice(1) : []
+    });
+
+    const tvShows = [
+      mk('०१', 'Bigg Boss', 'Seasons 1–3 · with Amitabh Bachchan', 'A house the whole country lived in by proxy — every corridor, confession room and courtyard designed to be watched from every angle, around the clock.', bb),
+      mk('०२', 'Kya Aap Paanchvi Pass Se Tez Hain?', '2008 · hosted by Shah Rukh Khan', 'A classroom rebuilt at the scale of a stadium — blackboards, pinwheels and playground light for primetime.', seq('kya-aap', 8)),
+      mk('०३', 'Fame X', 'Talent hunt · Sony', 'An arena of mirrors and beams, built so that ambition itself had somewhere to stand.', seq('fame-x', 14)),
+      mk('०४', 'The Great Indian Laughter Challenge', 'Comedy · STAR One', 'A stage warm enough for a punchline — the country\u2019s living room for laughter.', seq('laughter', 8)),
+      mk('०५', 'Indian Idol', 'Music · Sony', 'Light towers and a long walk to the microphone — the geometry of a dream audition.', seq('indian-idol', 4)),
+      mk('०६', 'Movers & Shakers', 'Late-night talk show', 'The desk, the skyline, the wink — late-night furniture for India\u2019s first big talk show. Photographs coming to this shelf soon.', null)
+    ];
+
+    const films = [
+      mk('०१', 'Raavan', '2010 · dir. Mani Ratnam', 'Painted village walls and forest hamlets deep in real jungle — sets that had to convince the rain itself.', seq('raavan', 12)),
+      mk('०२', 'Bose: The Forgotten Hero', '2005 · dir. Shyam Benegal', 'War camps, parade grounds and a vanished era rebuilt for Netaji\u2019s untold march.', seq('bose', 7)),
+      mk('०३', 'Welcome to Sajjanpur', '2008 · dir. Shyam Benegal', 'An entire fictional village raised from earth and paint — warm, worn and utterly believable.', seq('sajjanpur', 8)),
+      mk('०४', 'Iti Srikant', '2004 · Bengali classic', 'Period interiors for Sarat Chandra\u2019s world — lamplight, wood and quiet.', seq('iti-srikant', 6)),
+      mk('०५', 'Chittagong', '2012 · dir. Bedabrata Pain', 'The 1930 uprising, reconstructed brick by brick.', seq('chittagong', 1)),
+      mk('०६', 'Ek Chalis Ki Last Local', '2007', 'One night in Mumbai — bars, platforms and back-alleys after the last train leaves.', seq('ek-chalis', 1)),
+      mk('०७', 'Aa Dekhen Zara', '2009', 'A thriller\u2019s world of shadows and neon.', seq('aa-dekhe-zara', 14))
+    ];
+
+    const timeline = [
+      { y: '19––', what: 'Born in Sanhouli village, Bihar; trained in printmaking under Shyam Sharma, Patna' },
+      { y: '2004', what: 'Iti Srikant — feature film' },
+      { y: '2005', what: 'Bose: The Forgotten Hero · The Great Indian Laughter Challenge' },
+      { y: '2006', what: 'Bigg Boss, Season 1' },
+      { y: '2007', what: 'Ek Chalis Ki Last Local' },
+      { y: '2008', what: 'Kya Aap Paanchvi Pass Se Tez Hain? · Welcome to Sajjanpur · Bigg Boss, Season 2' },
+      { y: '2009', what: 'Aa Dekhen Zara · Bigg Boss, Season 3' },
+      { y: '2010', what: 'Raavan' },
+      { y: '2012', what: 'Chittagong' },
+      { y: '——', what: 'Fame X · Movers & Shakers · Indian Idol' },
+      { y: 'Now', what: 'Exhibitions in Delhi, Bengaluru, Kolkata & Patna · guest lectures across Bihar · Mumbai' }
+    ];
+
+    const w = this.world();
+    const wipe = this.state.wipe;
+    const wipeX = wipe === 'cover' ? 'translateX(0)' : (wipe === 'exit' ? 'translateX(102%)' : 'translateX(-102%)');
+    const wipeT = wipe === 'enter' ? 'none' : 'transform 480ms cubic-bezier(.72,0,.28,1)';
+
+    return {
+      isPress: w === 'press',
+      isSet: w === 'set',
+      toPress: () => this.switchWorld('press'),
+      toSet: () => this.switchWorld('set'),
+      galleryClick: (e) => {
+        const t = e.target;
+        if (!t || t.tagName !== 'IMG') return;
+        const src = t.getAttribute('src');
+        const imgs = Array.from(e.currentTarget.querySelectorAll('img')).map((i) => i.getAttribute('src'));
+        this.setState({ lightbox: src, lbList: imgs, lbIdx: Math.max(0, imgs.indexOf(src)) });
+      },
+      closeLightbox: () => this.setState({ lightbox: null }),
+      lbPrev: (e) => { e.stopPropagation(); this.stepLightbox(-1); },
+      lbNext: (e) => { e.stopPropagation(); this.stepLightbox(1); },
+      lightboxCounter: this.state.lbList.length ? (this.state.lbIdx + 1) + ' / ' + this.state.lbList.length : '',
+      pressPrint: () => {
+        const paper = this._paperEl, strokes = this._strokes;
+        if (!paper || !strokes) return;
+        const W = paper.width, H = paper.height;
+        const tmp = document.createElement('canvas');
+        tmp.width = W; tmp.height = H;
+        const tctx = tmp.getContext('2d');
+        tctx.drawImage(strokes, 0, 0);
+        tctx.globalCompositeOperation = 'source-in';
+        tctx.fillStyle = this.state.ink;
+        tctx.fillRect(0, 0, W, H);
+        const pctx = paper.getContext('2d');
+        pctx.save();
+        pctx.translate(W, 0);
+        pctx.scale(-1, 1);
+        pctx.globalAlpha = 0.9;
+        pctx.globalCompositeOperation = 'multiply';
+        pctx.drawImage(tmp, (Math.random() - 0.5) * 8, (Math.random() - 0.5) * 8);
+        pctx.restore();
+        this.setState({ editions: this.state.editions + 1 });
+      },
+      clearBlock: () => {
+        if (this._strokes) this._strokes.getContext('2d').clearRect(0, 0, this._strokes.width, this._strokes.height);
+        this._repaintBlock();
+      },
+      newSheet: () => {
+        const p = this._paperEl;
+        if (p) {
+          const c = p.getContext('2d');
+          c.globalCompositeOperation = 'source-over';
+          c.globalAlpha = 1;
+          c.fillStyle = '#FBF8F1';
+          c.fillRect(0, 0, p.width, p.height);
+        }
+        this.setState({ editions: 0 });
+      },
+      inkRed: () => this.setState({ ink: '#BF3B1B' }),
+      inkGold: () => this.setState({ ink: '#D9A521' }),
+      inkBlue: () => this.setState({ ink: '#33506B' }),
+      inkRedRing: this.state.ink === '#BF3B1B' ? '#F1EBDD' : 'rgba(0,0,0,0)',
+      inkGoldRing: this.state.ink === '#D9A521' ? '#F1EBDD' : 'rgba(0,0,0,0)',
+      inkBlueRing: this.state.ink === '#33506B' ? '#F1EBDD' : 'rgba(0,0,0,0)',
+      editionLabel: this.state.editions ? 'Edition ' + String(this.state.editions).padStart(2, '0') + ' — same block, new pull' : 'Carve, then press. The paper is waiting.',
+      lightboxOpen: !!this.state.lightbox,
+      lightboxImg: this.state.lightbox
+        ? React.createElement('img', {
+            src: this.state.lightbox,
+            alt: 'Enlarged work',
+            style: { maxWidth: '88vw', maxHeight: '82vh', boxShadow: '0 30px 80px rgba(0,0,0,.6)' }
+          })
+        : null,
+      wipeActive: wipe !== 'idle',
+      wipeX, wipeT,
+      wipeWord: this.state.wipeWord,
+      wipeSub: this.state.wipeSub,
+      prints, exRooms, tvShows, films, timeline
+    };
+  }
+}
+</script>
+</body>
+</html>
